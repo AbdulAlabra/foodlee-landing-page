@@ -3,7 +3,6 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { Pricing, Home as HomeMain } from 'components';
 const Home: NextPage = () => {
-  // master
   return (
     <div>
       <Head>
