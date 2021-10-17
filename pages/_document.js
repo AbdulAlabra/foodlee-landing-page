@@ -1,15 +1,24 @@
+/* eslint-disable */
 import * as React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
 import theme from 'theme';
 import createEmotionCache from 'theme/create-emotion-cache';
 
-export default class MyDocument extends Document {
+class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
         <Head>
           {/* PWA primary color */}
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+          />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          />
           <meta name="theme-color" content={theme.palette.primary.main} />
         </Head>
         <body>
@@ -20,7 +29,7 @@ export default class MyDocument extends Document {
     );
   }
 }
-
+MyDocument.displayName = 'MyDocument';
 // `getInitialProps` belongs to `_document` (instead of `_app`),
 // it's compatible with static-site generation (SSG).
 MyDocument.getInitialProps = async (ctx) => {
@@ -55,8 +64,7 @@ MyDocument.getInitialProps = async (ctx) => {
 
   ctx.renderPage = () =>
     originalRenderPage({
-      enhanceApp: (App: any) => (props) =>
-        <App emotionCache={cache} {...props} />,
+      enhanceApp: (App) => (props) => <App emotionCache={cache} {...props} />,
     });
 
   const initialProps = await Document.getInitialProps(ctx);
@@ -81,3 +89,4 @@ MyDocument.getInitialProps = async (ctx) => {
     ],
   };
 };
+export default MyDocument;
