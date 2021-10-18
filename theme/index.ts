@@ -7,11 +7,16 @@ const baseTheme = createTheme({
     },
     cardShadow: 'rgba(23, 70, 161, .11)',
     mode: 'light',
+    // primary: {
+    //   main: '#f57c00',
+    //   light: '#ff9800',
+    //   dark: '#e65100',
+    //   contrastText: '#fff',
+    // },
     primary: {
-      main: '#f57c00',
-      light: '#ff9800',
-      dark: '#e65100',
-      contrastText: '#fff',
+      main: '#ff5a31',
+      //main: '#ff8364',
+      //contrastText: '#fff',
     },
     secondary: {
       main: '#00AB55',
@@ -32,12 +37,23 @@ const baseTheme = createTheme({
       level1: '#fff',
     },
   },
-  typography: {
-    //fontFamily: 'monospace',
+  typography: {},
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: 'initial',
+          borderRadius: 20,
+        },
+      },
+    },
   },
 });
 export const RTLTheme = createTheme({
   ...baseTheme,
   direction: 'rtl',
+  typography: {
+    fontFamily: "'Cairo', sans-serif",
+  },
 });
 export default baseTheme;

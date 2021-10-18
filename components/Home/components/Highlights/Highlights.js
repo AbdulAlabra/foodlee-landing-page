@@ -4,17 +4,18 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Avatar from '@mui/material/Avatar';
 import Grid from '@mui/material/Grid';
+import useTranslation from 'next-translate/useTranslation';
 
 const Highlights = () => {
   const theme = useTheme();
+  const { t } = useTranslation('common');
   return (
     <Box>
       <Grid container spacing={2}>
         {[
           {
-            title: 'Built for developers',
-            subtitle:
-              'Webbee is built to make your life easier. Variables, build tooling, documentation, and reusable components.',
+            title: t('highlight_1_title'),
+            subtitle: t('highlight_1_des'),
             icon: (
               <svg
                 height={24}
@@ -34,9 +35,8 @@ const Highlights = () => {
             ),
           },
           {
-            title: 'Designed to be modern',
-            subtitle:
-              'Designed with the latest design trends in mind. Webbee feels modern, minimal, and beautiful.',
+            title: t('highlight_2_title'),
+            subtitle: t('highlight_2_des'),
             icon: (
               <svg
                 height={24}
@@ -56,9 +56,8 @@ const Highlights = () => {
             ),
           },
           {
-            title: 'Documentation for everything',
-            subtitle:
-              'We\'ve written extensive documentation for components and tools, so you never have to reverse engineer anything.',
+            title: t('highlight_3_title'),
+            subtitle: t('highlight_3_des'),
             icon: (
               <svg
                 height={24}
