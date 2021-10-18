@@ -1,6 +1,5 @@
 import { createTheme } from '@mui/material/styles';
-
-const theme = createTheme({
+const baseTheme = createTheme({
   palette: {
     alternate: {
       main: '#f7f9fc',
@@ -37,4 +36,8 @@ const theme = createTheme({
     //fontFamily: 'monospace',
   },
 });
-export default theme;
+export const RTLTheme = createTheme({
+  ...baseTheme,
+  direction: 'rtl',
+});
+export default baseTheme;

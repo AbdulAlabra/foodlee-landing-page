@@ -9,7 +9,7 @@ import Slide from '@mui/material/Slide';
 import { Topbar, Sidebar, Footer } from './components';
 import Container from 'common/Container';
 import { pages } from '../navigation';
-
+import { useRouter } from 'next/router';
 const HideOnScroll = ({ children }) => {
   const trigger = useScrollTrigger();
 
@@ -33,7 +33,7 @@ const Main = ({
 }) => {
   const theme = useTheme();
   const [openSidebar, setOpenSidebar] = useState(false);
-
+  const { locale } = useRouter();
   const handleSidebarOpen = () => {
     setOpenSidebar(true);
   };
@@ -43,7 +43,7 @@ const Main = ({
   };
 
   return (
-    <div>
+    <div dir={locale === 'ar' ? 'rtl' : 'ltr'}>
       <HideOnScroll>
         <AppBar
           position={'fixed'}
@@ -52,7 +52,7 @@ const Main = ({
           }}
           elevation={1}
         >
-          <Container paddingY={{ xs: 1 / 2, sm: 1 }}>
+          <Container paddingY={{ xs: 2 }}>
             <Topbar
               onSidebarOpen={handleSidebarOpen}
               themeMode={themeMode}

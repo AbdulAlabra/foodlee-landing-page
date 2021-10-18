@@ -9,7 +9,9 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import WebbeeLogo from 'svg/logos/Webbee';
 import paletteTypes from 'common/paletteTypes';
-
+import useTranslation from 'next-translate/useTranslation';
+import { useRouter } from 'next/router';
+import { ButtonLink } from 'components';
 const Topbar = ({
   themeMode,
   themeToggler,
@@ -18,6 +20,8 @@ const Topbar = ({
   paletteType,
 }) => {
   const theme = useTheme();
+  const router = useRouter();
+  const { t, lang } = useTranslation('common');
   return (
     <Box
       display={'flex'}
@@ -67,9 +71,12 @@ const Topbar = ({
           right={10}
         >
           <Box marginX={2}>
-            <Typography variant="button" color="HighlightText">
-              عربي
-            </Typography>
+            <ButtonLink
+              text={lang === 'ar' ? 'English' : 'عربي'}
+              href={router.asPath}
+              locale={lang === 'ar' ? 'en' : 'ar'}
+              replace={true}
+            />
           </Box>
         </Box>
       </Box>

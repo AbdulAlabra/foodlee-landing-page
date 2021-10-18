@@ -8,7 +8,7 @@ import createEmotionCache from 'theme/create-emotion-cache';
 class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en">
+      <Html>
         <Head>
           {/* PWA primary color */}
           <link
@@ -56,10 +56,10 @@ MyDocument.getInitialProps = async (ctx) => {
   // 4. page.render
 
   const originalRenderPage = ctx.renderPage;
-
   // You can consider sharing the same emotion cache between all the SSR requests to speed up performance.
   // However, be aware that it can have global side effects.
-  const cache = createEmotionCache();
+
+  const cache = createEmotionCache(ctx.locale);
   const { extractCriticalToChunks } = createEmotionServer(cache);
 
   ctx.renderPage = () =>
@@ -79,7 +79,6 @@ MyDocument.getInitialProps = async (ctx) => {
       dangerouslySetInnerHTML={{ __html: style.css }}
     />
   ));
-
   return {
     ...initialProps,
     // Styles fragment is rendered after the app and page rendering finish.
