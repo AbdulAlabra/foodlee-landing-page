@@ -36,7 +36,7 @@ const Hero = () => {
                 variant={'inherit'}
               >
                 <Typed
-                  strings={['startup.', 'future.', 'success.']}
+                  strings={['startup.', 'startup.', 'startup.']}
                   typeSpeed={80}
                   loop={true}
                 />
