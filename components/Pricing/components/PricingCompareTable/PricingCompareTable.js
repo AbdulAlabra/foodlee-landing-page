@@ -11,73 +11,124 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-
-const features = [
-  {
-    title: '1 User',
-    id: 1,
-  },
-  {
-    title: '1 App',
-    id: 2,
-  },
-  {
-    title: 'Integrations',
-    id: 3,
-  },
-  {
-    title: 'Google Ads',
-    id: 4,
-  },
-  {
-    title: 'SSO via Google',
-    id: 5,
-  },
-  {
-    title: 'API access',
-    id: 6,
-  },
-  {
-    title: 'Facebook Ads',
-    id: 7,
-  },
-];
-
-const pricing = [
-  {
-    title: 'Basic',
-    price: {
-      monthly: 22,
-      annual: 210,
-    },
-    features: [1, 2, 3, 7],
-    isHighlighted: false,
-    btnText: 'Get basic',
-  },
-  {
-    title: 'Professional',
-    price: {
-      annual: 420,
-      monthly: 44,
-    },
-    features: [1, 3, 4, 5],
-    isHighlighted: true,
-    btnText: 'Get pro',
-  },
-  {
-    title: 'Commercial',
-    price: {
-      annual: 740,
-      monthly: 77,
-    },
-    features: [1, 2, 3, 4, 5, 6, 7],
-    isHighlighted: false,
-    btnText: 'Contact us',
-  },
-];
+import useTranslation from 'next-translate/useTranslation';
 
 const PricingCompareTable = () => {
   const theme = useTheme();
+  const { t } = useTranslation('common');
+
+  const pricing = [
+    {
+      title: t('basicPlan'),
+      price: {
+        monthly: 22,
+        annual: 210,
+      },
+      features: [1, 2, 3, 7],
+      isHighlighted: false,
+      btnText: 'Get basic',
+    },
+    {
+      title: t('premiumPlan'),
+      price: {
+        annual: 420,
+        monthly: 44,
+      },
+      features: [1, 3, 4, 5],
+      isHighlighted: true,
+      btnText: 'Get pro',
+    },
+    {
+      title: t('growthPlan'),
+      price: {
+        annual: 740,
+        monthly: 77,
+      },
+      features: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+      isHighlighted: false,
+      btnText: 'Contact us',
+    },
+  ];
+
+  const features = [
+    {
+      title: t('f1'),
+      info: '',
+      id: 1,
+    },
+    {
+      title: t('f2'),
+      info: '',
+
+      id: 2,
+    },
+    {
+      title: t('f3'),
+      info: '',
+
+      id: 3,
+    },
+    {
+      title: t('f4'),
+      info: '',
+
+      id: 4,
+    },
+    {
+      title: t('f5'),
+      info: '',
+
+      id: 5,
+    },
+    {
+      title: t('f6'),
+      info: '',
+
+      id: 6,
+    },
+    {
+      title: t('f7'),
+      info: t('soon'),
+
+      id: 7,
+    },
+    {
+      title: t('f8'),
+      info: '',
+
+      id: 8,
+    },
+    {
+      title: t('f9'),
+      info: t('soon'),
+
+      id: 9,
+    },
+    {
+      title: t('f10'),
+      info: t('soon'),
+
+      id: 10,
+    },
+    {
+      title: t('f11'),
+      info: t('soon'),
+
+      id: 11,
+    },
+    {
+      title: t('f12'),
+      info: '',
+
+      id: 12,
+    },
+    {
+      title: t('f13'),
+      info: '',
+
+      id: 13,
+    },
+  ];
   return (
     <Box>
       <Box marginBottom={4}>
@@ -98,7 +149,7 @@ const PricingCompareTable = () => {
             </caption>
             <TableHead>
               <TableRow>
-                <TableCell>Features</TableCell>
+                <TableCell>{t('features')}</TableCell>
                 {pricing.map((item, i) => (
                   <TableCell align="center" key={i}>
                     <Typography
@@ -115,6 +166,9 @@ const PricingCompareTable = () => {
                 <TableRow key={feature.id}>
                   <TableCell component="th" scope="row">
                     {feature.title}
+                    <Typography variant="caption" display="block">
+                      {feature.info}
+                    </Typography>
                   </TableCell>
                   <TableCell align="center">
                     <Box display={'flex'} justifyContent={'center'}>

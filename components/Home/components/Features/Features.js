@@ -8,9 +8,11 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import TeamWorkingIllustration from 'svg/illustrations/TeamWorking';
+import useTranslation from 'next-translate/useTranslation';
 
 const Features = () => {
   const theme = useTheme();
+  const { t } = useTranslation();
   return (
     <Box>
       <Box marginBottom={4}>
