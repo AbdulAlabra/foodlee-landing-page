@@ -26,7 +26,7 @@ const PricingCompareTable = () => {
       },
       features: [1, 2, 3, 7],
       isHighlighted: false,
-      btnText: 'Get basic',
+      btnText: t('basicPlan'),
     },
     {
       title: t('premiumPlan'),
@@ -36,17 +36,17 @@ const PricingCompareTable = () => {
       },
       features: [1, 3, 4, 5],
       isHighlighted: true,
-      btnText: 'Get pro',
+      btnText: t('premiumPlan'),
     },
     {
-      title: t('growthPlan'),
+      title: t('premiumPlan'),
       price: {
         annual: 740,
         monthly: 77,
       },
       features: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
       isHighlighted: false,
-      btnText: 'Contact us',
+      btnText: t('premiumPlan'),
     },
   ];
 
