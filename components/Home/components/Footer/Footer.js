@@ -6,11 +6,10 @@ import Typography from '@mui/material/Typography';
 import useTranslation from 'next-translate/useTranslation';
 import { useTheme } from '@mui/material';
 import { ButtonLink } from 'components';
-import Link from '@mui/material/Link';
 const Footer = () => {
   const { t } = useTranslation('common');
   const theme = useTheme();
-  const signURL = `${process.env.NEXT_PUBLIC_SIGN_UP_URL}`;
+  const signURL = process.env.NEXT_PUBLIC_SIGN_UP_URL;
 
   return (
     <Box>
@@ -56,11 +55,16 @@ const Footer = () => {
         {t('cantactUsIfYouHaveAnyQuestion')}
       </Typography>
       <Box marginTop={3} display={'flex'} justifyContent={'center'}>
-        <Link underline="none" target={'_blank'} href={signURL}>
-          <Button variant="contained" color="primary" size="large">
-            {t('startFreeTrial')}
-          </Button>
-        </Link>
+        <Button
+          component={'a'}
+          href={signURL}
+          target={'_blank'}
+          variant="contained"
+          color="primary"
+          size="large"
+        >
+          {t('startFreeTrial')}
+        </Button>
       </Box>
     </Box>
   );
