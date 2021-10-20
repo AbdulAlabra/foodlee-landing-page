@@ -13,7 +13,7 @@ import useTranslation from 'next-translate/useTranslation';
 
 const PricingCards = () => {
   const theme = useTheme();
-  const [pricingOption, setPricingOption] = useState('annual');
+  const [pricingOption, setPricingOption] = useState('monthly');
   const { t } = useTranslation('common');
   const url = process.env.NEXT_PUBLIC_SIGN_UP_URL;
   const handleClick = (event, newPricingOption) => {
