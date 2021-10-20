@@ -22,6 +22,8 @@ const Topbar = ({
   const theme = useTheme();
   const router = useRouter();
   const { t, lang } = useTranslation('common');
+  const signURL = process.env.NEXT_PUBLIC_SIGN_UP_URL;
+
   return (
     <Box
       display={'flex'}
@@ -56,10 +58,10 @@ const Topbar = ({
               color="primary"
               component="a"
               target="blank"
-              href="https://material-ui.com/store/items/webbee-landing-page/"
+              href={signURL}
               size="large"
             >
-              Start Now
+              {t('startFreeTrial')}
             </Button>
           </Box>
         </Box>

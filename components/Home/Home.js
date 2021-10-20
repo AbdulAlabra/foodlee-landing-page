@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Container from 'common/Container';
 import { Features, Footer, Hero, Highlights } from './components';
 import { Pricing } from 'components';
+
 const Home = () => {
   const theme = useTheme();
   return (

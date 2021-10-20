@@ -35,9 +35,9 @@ const Pricing = () => {
           />
         </Box>
       </Box>
-      <Container>
+      {/* <Container>
         <Partners />
-      </Container>
+      </Container> */}
       <Container maxWidth={1100}>
         <PricingCompareTable />
       </Container>

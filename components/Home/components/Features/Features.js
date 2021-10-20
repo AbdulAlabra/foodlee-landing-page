@@ -27,31 +27,38 @@ const Features = () => {
           color={'textSecondary'}
           align={'center'}
         >
-          Features
+          {t('features')}
         </Typography>
         <Box
           component={Typography}
           fontWeight={700}
-          variant={'h3'}
+          sx={{
+            fontSize: {
+              xs: theme.typography.h4.fontSize,
+              md: theme.typography.h3.fontSize,
+            },
+          }}
           gutterBottom
           align={'center'}
         >
-          The powerful and flexible theme
-          <br />
-          for all kinds of businesses
+          {t('featureHeadLine')}
         </Box>
         <Typography
+          marginTop={3}
           variant={'h6'}
+          sx={{
+            fontSize: {
+              xs: theme.typography.subtitle1.fontSize,
+              md: theme.typography.h6.fontSize,
+            },
+          }}
           component={'p'}
           color={'textSecondary'}
           align={'center'}
         >
-          Build a beautiful, modern website with flexible, fully customizable,
-          atomic Material-UI components.
-          <br />
-          An experience you'd expect from a design system.
+          {t('foodleeGiveFlexableMenu')}
         </Typography>
-        <Box marginTop={3} display={'flex'} justifyContent={'center'}>
+        {/* <Box marginTop={3} display={'flex'} justifyContent={'center'}>
           <Button
             component={'a'}
             href={'https://material-ui.com/store/items/webbee-landing-page/'}
@@ -79,7 +86,7 @@ const Features = () => {
           >
             Purchase now
           </Button>
-        </Box>
+        </Box> */}
       </Box>
       <Box
         display={'flex'}

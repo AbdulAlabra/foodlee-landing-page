@@ -3,8 +3,14 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import useTranslation from 'next-translate/useTranslation';
+import { useTheme } from '@mui/material';
 
 const Footer = () => {
+  const { t } = useTranslation('common');
+  const theme = useTheme();
+  const signURL = process.env.NEXT_PUBLIC_SIGN_UP_URL;
+
   return (
     <Box>
       <Typography
@@ -16,53 +22,48 @@ const Footer = () => {
         color={'textSecondary'}
         align={'center'}
       >
-        Get Started
+        {t('whatAreYouWaitingFor')}
       </Typography>
       <Box
         component={Typography}
         fontWeight={700}
         variant={'h3'}
+        sx={{
+          fontSize: {
+            xs: theme.typography.h4.fontSize,
+            md: theme.typography.h3.fontSize,
+          },
+        }}
         gutterBottom
         align={'center'}
       >
-        Get started with Webbee today
+        {t('startWithFoodleeToday')}
       </Box>
       <Typography
         variant={'h6'}
         component={'p'}
+        marginTop={2}
+        sx={{
+          fontSize: {
+            xs: theme.typography.subtitle1.fontSize,
+            md: theme.typography.h6.fontSize,
+          },
+        }}
         color={'textSecondary'}
         align={'center'}
       >
-        Build a beautiful, modern website with flexible, fully customizable,
-        atomic Material-UI components.
+        {t('cantactUsIfYouHaveAnyQuestion')}
       </Typography>
       <Box marginTop={3} display={'flex'} justifyContent={'center'}>
         <Button
           component={'a'}
-          href={'https://material-ui.com/store/items/webbee-landing-page/'}
+          href={signURL}
           target={'_blank'}
           variant="contained"
           color="primary"
           size="large"
-          endIcon={
-            <svg
-              width={16}
-              height={16}
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
-          }
         >
-          Purchase now
+          {t('startFreeTrial')}
         </Button>
       </Box>
     </Box>

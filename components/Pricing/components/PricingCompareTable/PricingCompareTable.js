@@ -21,47 +21,36 @@ const PricingCompareTable = () => {
     {
       title: t('basicPlan'),
       price: {
-        monthly: 22,
-        annual: 210,
+        monthly: 50,
+        annual: 50 * 12,
       },
-      features: [1, 2, 3, 7],
+      features: [3, 2, 4, 5, 6],
       isHighlighted: false,
       btnText: t('basicPlan'),
     },
     {
       title: t('premiumPlan'),
       price: {
-        annual: 420,
-        monthly: 44,
+        monthly: 99,
+        annual: 99 * 12,
       },
-      features: [1, 3, 4, 5],
+      features: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13],
       isHighlighted: true,
       btnText: t('premiumPlan'),
     },
     {
-      title: t('premiumPlan'),
+      title: t('growthPlan'),
       price: {
-        annual: 740,
-        monthly: 77,
+        monthly: 199,
+        annual: 199 * 12,
       },
       features: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
       isHighlighted: false,
-      btnText: t('premiumPlan'),
+      btnText: t('growthPlan'),
     },
   ];
 
   const features = [
-    {
-      title: t('f1'),
-      info: '',
-      id: 1,
-    },
-    {
-      title: t('f2'),
-      info: '',
-
-      id: 2,
-    },
     {
       title: t('f3'),
       info: '',
@@ -87,6 +76,18 @@ const PricingCompareTable = () => {
       id: 6,
     },
     {
+      title: t('f2'),
+      info: '',
+
+      id: 2,
+    },
+    {
+      title: t('f1'),
+      info: '',
+      id: 1,
+    },
+
+    {
       title: t('f7'),
       info: t('soon'),
 
@@ -111,6 +112,11 @@ const PricingCompareTable = () => {
       id: 10,
     },
     {
+      title: t('f13'),
+      info: '',
+      id: 13,
+    },
+    {
       title: t('f11'),
       info: t('soon'),
 
@@ -122,12 +128,6 @@ const PricingCompareTable = () => {
 
       id: 12,
     },
-    {
-      title: t('f13'),
-      info: '',
-
-      id: 13,
-    },
   ];
   return (
     <Box>
@@ -135,18 +135,23 @@ const PricingCompareTable = () => {
         <Box
           component={Typography}
           fontWeight={700}
-          variant={'h3'}
+          sx={{
+            fontSize: {
+              xs: theme.typography.h4.fontSize,
+              md: theme.typography.h3.fontSize,
+            },
+          }}
           align={'center'}
         >
-          Find the right plan for your site
+          {t('comparePlans')}
         </Box>
       </Box>
       <Box>
         <TableContainer component={Paper} elevation={0}>
           <Table aria-label="caption table" sx={{ minWidth: 600 }}>
-            <caption>
+            {/* <caption>
               Compare the plans and choose the one which works for you the best.
-            </caption>
+            </caption> */}
             <TableHead>
               <TableRow>
                 <TableCell>{t('features')}</TableCell>
@@ -262,6 +267,8 @@ const PricingCompareTable = () => {
                   <TableCell align="center" key={i}>
                     <Button
                       size={'large'}
+                      href={process.env.NEXT_PUBLIC_SIGN_UP_URL}
+                      target={'_blank'}
                       variant={item.isHighlighted ? 'contained' : 'outlined'}
                     >
                       {item.btnText}

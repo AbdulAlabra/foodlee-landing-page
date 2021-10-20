@@ -16,6 +16,7 @@ const Hero = () => {
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
     defaultMatches: true,
   });
+  const demoStoreURL = process.env.NEXT_PUBLIC_DEMO_STORE_URL;
 
   return (
     <Grid container spacing={4}>
@@ -76,8 +77,7 @@ const Hero = () => {
               color="textSecondary"
               sx={{ fontWeight: 400 }}
             >
-              Webbee will make your product look modern and professional while
-              saving you precious time.
+              {t('headline')}
             </Typography>
           </Box>
           <Box
@@ -91,10 +91,10 @@ const Hero = () => {
               color="primary"
               size="large"
               fullWidth={isMd ? false : true}
-              href={'https://material-ui.com/store/items/webbee-landing-page/'}
+              href={demoStoreURL}
               target={'_blank'}
             >
-              Purchase now
+              {t('startFreeTrial')}
             </Button>
             <Box
               marginTop={{ xs: 2, sm: 0 }}
@@ -103,13 +103,14 @@ const Hero = () => {
             >
               <Button
                 component={'a'}
-                href={'/docs-introduction'}
+                href={demoStoreURL}
+                target={'_blank'}
                 variant="outlined"
                 color="primary"
                 size="large"
                 fullWidth={isMd ? false : true}
               >
-                View documentation
+                {t('seeDemo')}
               </Button>
             </Box>
           </Box>

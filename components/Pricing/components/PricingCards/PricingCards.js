@@ -9,135 +9,139 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Grid from '@mui/material/Grid';
 import CardActions from '@mui/material/CardActions';
-
-const pricing = [
-  {
-    title: 'Basic',
-    price: {
-      monthly: 22,
-      annual: 210,
-    },
-    features: [
-      {
-        title: '1 User',
-        isIncluded: true,
-      },
-      {
-        title: '1 App',
-        isIncluded: true,
-      },
-      {
-        title: 'Integrations',
-        isIncluded: true,
-      },
-      {
-        title: 'Google Ads',
-        isIncluded: false,
-      },
-      {
-        title: 'SSO via Google',
-        isIncluded: false,
-      },
-      {
-        title: 'API access',
-        isIncluded: false,
-      },
-      {
-        title: 'Facebook Ads',
-        isIncluded: false,
-      },
-    ],
-    isHighlighted: false,
-    btnText: 'Get basic',
-  },
-  {
-    title: 'Professional',
-    price: {
-      annual: 420,
-      monthly: 44,
-    },
-    features: [
-      {
-        title: '1 User',
-        isIncluded: true,
-      },
-      {
-        title: '1 App',
-        isIncluded: true,
-      },
-      {
-        title: 'Integrations',
-        isIncluded: true,
-      },
-      {
-        title: 'Google Ads',
-        isIncluded: true,
-      },
-      {
-        title: 'SSO via Google',
-        isIncluded: true,
-      },
-      {
-        title: 'API access',
-        isIncluded: false,
-      },
-      {
-        title: 'Facebook Ads',
-        isIncluded: false,
-      },
-    ],
-    isHighlighted: true,
-    btnText: 'Get pro',
-  },
-  {
-    title: 'Commercial',
-    price: {
-      annual: 740,
-      monthly: 77,
-    },
-    features: [
-      {
-        title: '1 User',
-        isIncluded: true,
-      },
-      {
-        title: '1 App',
-        isIncluded: true,
-      },
-      {
-        title: 'Integrations',
-        isIncluded: true,
-      },
-      {
-        title: 'Google Ads',
-        isIncluded: true,
-      },
-      {
-        title: 'SSO via Google',
-        isIncluded: true,
-      },
-      {
-        title: 'API access',
-        isIncluded: true,
-      },
-      {
-        title: 'Facebook Ads',
-        isIncluded: true,
-      },
-    ],
-    isHighlighted: false,
-    btnText: 'Contact us',
-  },
-];
+import useTranslation from 'next-translate/useTranslation';
 
 const PricingCards = () => {
   const theme = useTheme();
   const [pricingOption, setPricingOption] = useState('annual');
-
+  const { t } = useTranslation('common');
+  const url = process.env.NEXT_PUBLIC_SIGN_UP_URL;
   const handleClick = (event, newPricingOption) => {
     setPricingOption(newPricingOption);
   };
+  const pricing = [
+    {
+      title: t('basicPlan'),
+      price: {
+        monthly: 50,
+        annual: 50 * 12,
+      },
+      features: [
+        {
+          title: t('f5'),
+          isIncluded: true,
+        },
+        {
+          title: t('f6'),
+          isIncluded: true,
+        },
+        {
+          title: t('f4'),
+          isIncluded: true,
+        },
+        {
+          title: t('f8'),
+          isIncluded: false,
+        },
 
+        {
+          title: t('f1'),
+          isIncluded: false,
+        },
+        {
+          title: t('f11'),
+          isIncluded: false,
+        },
+        {
+          title: t('f12'),
+          isIncluded: false,
+        },
+      ],
+      isHighlighted: false,
+      btnText: t('basicPlan'),
+    },
+    {
+      title: t('premiumPlan'),
+      price: {
+        annual: 99 * 12,
+        monthly: 99,
+      },
+      features: [
+        {
+          title: t('f5'),
+          isIncluded: true,
+        },
+        {
+          title: t('f6'),
+          isIncluded: true,
+        },
+        {
+          title: t('f4'),
+          isIncluded: true,
+        },
+        {
+          title: t('f8'),
+          isIncluded: true,
+        },
+
+        {
+          title: t('f1'),
+          isIncluded: true,
+        },
+        {
+          title: t('f11'),
+          isIncluded: false,
+        },
+        {
+          title: t('f12'),
+          isIncluded: false,
+        },
+      ],
+      isHighlighted: true,
+
+      btnText: t('premiumPlan'),
+    },
+    {
+      title: t('growthPlan'),
+      price: {
+        annual: 199 * 12,
+        monthly: 199,
+      },
+      features: [
+        {
+          title: t('f5'),
+          isIncluded: true,
+        },
+        {
+          title: t('f6'),
+          isIncluded: true,
+        },
+        {
+          title: t('f4'),
+          isIncluded: true,
+        },
+        {
+          title: t('f8'),
+          isIncluded: true,
+        },
+
+        {
+          title: t('f1'),
+          isIncluded: true,
+        },
+        {
+          title: t('f11'),
+          isIncluded: true,
+        },
+        {
+          title: t('f12'),
+          isIncluded: true,
+        },
+      ],
+      isHighlighted: false,
+      btnText: t('growthPlan'),
+    },
+  ];
   return (
     <Box>
       <Box marginBottom={4}>
@@ -145,11 +149,30 @@ const PricingCards = () => {
           component={Typography}
           fontWeight={700}
           variant={'h3'}
+          sx={{
+            fontSize: {
+              xs: theme.typography.h4.fontSize,
+              md: theme.typography.h3.fontSize,
+            },
+          }}
           align={'center'}
         >
-          Pick the best plan based
-          <br />
-          on your business needs
+          {t('pickTheBestPlanForYourBusinessNeeds')}
+        </Box>
+        <Box
+          fontWeight={700}
+          marginTop={2}
+          color={theme.palette.secondary.light}
+          component={Typography}
+          sx={{
+            fontSize: {
+              xs: theme.typography.subtitle1.fontSize,
+              md: theme.typography.h6.fontSize,
+            },
+          }}
+          align={'center'}
+        >
+          {t('twoFreeMonthsIfPaidAnnully')}
         </Box>
       </Box>
       <Box>
@@ -180,7 +203,7 @@ const PricingCards = () => {
                       : 'primary',
                 }}
               >
-                Monthly
+                {t('monthly')}
               </Typography>
             </ToggleButton>
             <ToggleButton
@@ -204,7 +227,7 @@ const PricingCards = () => {
                       : 'primary',
                 }}
               >
-                Annual
+                {t('annual')}
               </Typography>
             </ToggleButton>
           </ToggleButtonGroup>
@@ -240,16 +263,16 @@ const PricingCards = () => {
                         </Box>
                       </Typography>
                       <Box display={'flex'} alignItems={'flex-start'}>
-                        <Typography variant={'h4'} color={'primary'}>
+                        <Typography variant={'subtitle1'} color={'primary'}>
                           <Box
                             component={'span'}
                             fontWeight={600}
                             marginRight={1 / 2}
                           >
-                            $
+                            SAR
                           </Box>
                         </Typography>
-                        <Typography variant={'h3'} color={'primary'}>
+                        <Typography variant={'h4'} color={'primary'}>
                           <Box component={'span'} fontWeight={600}>
                             {pricingOption === 'annual'
                               ? item.price.annual
@@ -259,8 +282,7 @@ const PricingCards = () => {
                       </Box>
                     </Box>
                     <Typography variant={'subtitle2'} color={'textSecondary'}>
-                      Per user, per{' '}
-                      {pricingOption === 'annual' ? 'year' : 'month'}
+                      {t('taxIsNotIncluded')}
                     </Typography>
                   </Box>
                   <Grid container spacing={1}>
@@ -290,6 +312,8 @@ const PricingCards = () => {
                   <Button
                     size={'large'}
                     variant={item.isHighlighted ? 'contained' : 'outlined'}
+                    href={url}
+                    target="_blank"
                   >
                     {item.btnText}
                   </Button>
