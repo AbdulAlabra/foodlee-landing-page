@@ -9,10 +9,12 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import TeamWorkingIllustration from 'svg/illustrations/TeamWorking';
 import useTranslation from 'next-translate/useTranslation';
-
+import FastfoodIcon from '@mui/icons-material/Fastfood';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import PublicIcon from '@mui/icons-material/Public';
 const Features = () => {
   const theme = useTheme();
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
   return (
     <Box>
       <Box marginBottom={4}>
@@ -93,9 +95,8 @@ const Features = () => {
         <Grid container spacing={4}>
           {[
             {
-              title: 'Themeable',
-              subtitle:
-                'Customize any part of our components to match your design needs.',
+              title: t('cf1'),
+              subtitle: t('cd1'),
               icon: (
                 <svg
                   height={24}
@@ -115,9 +116,8 @@ const Features = () => {
               ),
             },
             {
-              title: 'Light and Dark UI',
-              subtitle:
-                'Optimized for multiple color modes. Use light or dark, your choice.',
+              title: t('cf2'),
+              subtitle: t('cd2'),
               icon: (
                 <svg
                   height={24}
@@ -137,75 +137,23 @@ const Features = () => {
               ),
             },
             {
-              title: 'Composable',
-              subtitle:
-                'Designed with composition in mind. Compose new components with ease.',
-              icon: (
-                <svg
-                  height={24}
-                  width={24}
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"
-                  />
-                </svg>
-              ),
+              title: t('cf3'),
+              subtitle: t('cd3'),
+              icon: <PublicIcon />,
             },
             {
-              title: 'Developer Experience',
-              subtitle:
-                'Guaranteed to boost your productivity when building your app or website.',
-              icon: (
-                <svg
-                  height={24}
-                  width={24}
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
-                </svg>
-              ),
+              title: t('cf4'),
+              subtitle: t('cd4'),
+              icon: <InstagramIcon />,
             },
             {
-              title: 'Continuous Updates',
-              subtitle:
-                'We continually deploy improvements and new updates to Webbee.',
-              icon: (
-                <svg
-                  height={24}
-                  width={24}
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-                  />
-                </svg>
-              ),
+              title: t('cf5'),
+              subtitle: t('cd5'),
+              icon: <FastfoodIcon />,
             },
             {
-              title: 'Free support',
-              subtitle:
-                '6 months of free technical support to help you build your website faster.',
+              title: t('cf6'),
+              subtitle: t('cd6'),
               icon: (
                 <svg
                   height={24}

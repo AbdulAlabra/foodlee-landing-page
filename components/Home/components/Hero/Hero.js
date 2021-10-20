@@ -7,10 +7,12 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import RocketIllustration from 'svg/illustrations/Rocket';
+import RocketIllustration from 'svg/illustrations/QRCode';
+import useTranslation from 'next-translate/useTranslation';
 
 const Hero = () => {
   const theme = useTheme();
+  const { t } = useTranslation('common');
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
     defaultMatches: true,
   });
@@ -21,28 +23,52 @@ const Hero = () => {
         <Box data-aos={isMd ? 'fade-right' : 'fade-up'}>
           <Box marginBottom={2}>
             <Typography
-              variant="h2"
               color="textPrimary"
               sx={{
                 fontWeight: 700,
+                fontSize: {
+                  xs: theme.typography.h4.fontSize,
+                  md: theme.typography.h2.fontSize,
+                },
               }}
             >
-              Turn your ideas
-              <br />
-              into a{' '}
+              {t('foodleeGiveYouOnlineMenu')}{' '}
               <Typography
                 color={'primary'}
                 component={'span'}
                 variant={'inherit'}
               >
                 <Typed
-                  strings={['startup.', 'startup.', 'startup.']}
-                  typeSpeed={80}
+                  strings={[t('modern'), t('beautiful'), t('easy')]}
+                  typeSpeed={100}
                   loop={true}
                 />
               </Typography>
             </Typography>
           </Box>
+          {/* <Box marginBottom={2}>
+            <Typography
+              variant="h2"
+              color="textPrimary"
+              sx={{
+                fontWeight: 700,
+              }}
+            >
+              {t('foodleeGiveYouOnlineMenu')}{' '}
+              <Typography
+                color={'primary'}
+                component={'span'}
+                variant={'inherit'}
+              >
+                <Typed
+                  strings={[t('modern'), t('beautiful'), t('easy')]}
+                  typeSpeed={100}
+                  loop={true}
+                />
+              </Typography>
+            </Typography>
+          
+          </Box> */}
           <Box marginBottom={3}>
             <Typography
               variant="h6"

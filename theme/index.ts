@@ -18,11 +18,15 @@ const baseTheme = createTheme({
       //main: '#ff8364',
       //contrastText: '#fff',
     },
+    // secondary: {
+    //   main: '#00AB55',
+    //   light: '#33CC70',
+    //   dark: '#009357',
+    //   contrastText: '#fff',
+    // },
     secondary: {
-      main: '#00AB55',
-      light: '#33CC70',
-      dark: '#009357',
-      contrastText: '#fff',
+      main: '#ff8364',
+      //light: '#ffac97',
     },
     text: {
       primary: '#2d3748',
