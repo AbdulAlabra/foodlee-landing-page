@@ -9,10 +9,11 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import RocketIllustration from 'svg/illustrations/QRCode';
 import useTranslation from 'next-translate/useTranslation';
-
+import { useRouter } from 'next/router';
 const Hero = () => {
   const theme = useTheme();
   const { t } = useTranslation('common');
+  const router = useRouter();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
     defaultMatches: true,
   });
@@ -39,7 +40,7 @@ const Hero = () => {
                 component={'span'}
                 variant={'inherit'}
                 display={{
-                  xs: 'block',
+                  xs: router.locale === 'en' ? 'block' : 'inline',
                   md: 'inline',
                 }}
               >
