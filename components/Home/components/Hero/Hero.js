@@ -18,7 +18,7 @@ const Hero = () => {
     defaultMatches: true,
   });
   const demoStoreURL = process.env.NEXT_PUBLIC_DEMO_STORE_URL;
-
+  const signupURL = process.env.NEXT_PUBLIC_SIGN_UP_URL;
   return (
     <Grid container spacing={4}>
       <Grid item container alignItems={'center'} xs={12} md={6}>
@@ -96,7 +96,7 @@ const Hero = () => {
               color="primary"
               size="large"
               fullWidth={isMd ? false : true}
-              href={demoStoreURL}
+              href={signupURL}
               target={'_blank'}
             >
               {t('startFreeTrial')}

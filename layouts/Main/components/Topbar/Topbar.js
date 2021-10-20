@@ -69,8 +69,8 @@ const Topbar = ({
         <Box
           sx={{ display: 'flex' }}
           alignItems={'center'}
-          position="absolute"
-          right={10}
+          // position="absolute"
+          //right={10}
         >
           <Box marginX={2}>
             <ButtonLink
