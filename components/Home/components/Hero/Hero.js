@@ -38,6 +38,10 @@ const Hero = () => {
                 color={'primary'}
                 component={'span'}
                 variant={'inherit'}
+                display={{
+                  xs: 'block',
+                  md: 'inline',
+                }}
               >
                 <Typed
                   strings={[t('modern'), t('beautiful'), t('easy')]}
