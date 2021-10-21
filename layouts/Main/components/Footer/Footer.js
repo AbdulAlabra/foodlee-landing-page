@@ -36,7 +36,7 @@ const Footer = () => {
             <Box margin={1}>
               <Link
                 target="_blank"
-                href={'http://api.whatsapp.com/send?phone=‪+966506728299‬'}
+                href={'http://api.whatsapp.com/send?phone=‪00966558002022'}
               >
                 <WhatsAppIcon fontSize="medium" />
               </Link>
