@@ -5,7 +5,6 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import useTranslation from 'next-translate/useTranslation';
 import { useTheme } from '@mui/material';
-import { ButtonLink } from 'components';
 const Footer = () => {
   const { t } = useTranslation('common');
   const theme = useTheme();
