@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
@@ -9,6 +9,7 @@ import { CacheProvider } from '@emotion/react';
 import '../styles/globals.css';
 import { Main } from 'layouts';
 import { useRouter } from 'next/router';
+import { analytics } from 'utils/firebase';
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
 const clientSideEmotionCacheRTL = createEmotionCache('ar');
@@ -24,8 +25,12 @@ const RTL = ({
   }
   return <CacheProvider value={emotionCache}>{children}</CacheProvider>;
 };
+
 function MyApp({ Component, pageProps }: AppProps & any) {
   const { locale } = useRouter();
+  useEffect(() => {
+    analytics();
+  }, []);
   return (
     <RTL>
       <Head>
