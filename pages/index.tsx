@@ -9,7 +9,7 @@ const Home: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>{t('foodlee')}</title>
+        <title>Foodlee | فودلي</title>
         <meta name="description" content={t('foodleeDisc')} />
         <link rel="icon" href="/f-logo.png" />
       </Head>
