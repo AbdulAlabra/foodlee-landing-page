@@ -11,6 +11,8 @@ import MailIcon from '@mui/icons-material/MailOutlineSharp';
 import useTranslation from 'next-translate/useTranslation';
 const Footer = () => {
   const { t } = useTranslation('common');
+  const phone = '+966558002022';
+  const phoneURL = `https://api.whatsapp.com/send?phone=‪${phone}`;
   return (
     <Grid container spacing={2}>
       <Grid item xs={12}>
@@ -34,10 +36,7 @@ const Footer = () => {
           </Box>
           <Box display="flex" flexWrap={'wrap'} alignItems={'center'}>
             <Box margin={1}>
-              <Link
-                target="_blank"
-                href={'https://api.whatsapp.com/send?phone=‪+966558002022'}
-              >
+              <Link target="_blank" href={phoneURL}>
                 <WhatsAppIcon fontSize="medium" />
               </Link>
             </Box>
