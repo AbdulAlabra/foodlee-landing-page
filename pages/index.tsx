@@ -11,7 +11,7 @@ const Home: NextPage = () => {
       <Head>
         <title>{t('foodlee')}</title>
         <meta name="description" content={t('foodleeDisc')} />
-        <link rel="icon" href="/f-logo.svg" />
+        <link rel="icon" href="/f-logo.png" />
       </Head>
       <HomeMain />
     </div>
