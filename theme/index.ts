@@ -57,7 +57,8 @@ export const RTLTheme = createTheme({
   ...baseTheme,
   direction: 'rtl',
   typography: {
-    fontFamily: "'Cairo', sans-serif",
+    //fontFamily: "'Cairo', sans-serif",
+    fontFamily: "'Noto Kufi Arabic', sans-serif",
   },
 });
 export default baseTheme;
